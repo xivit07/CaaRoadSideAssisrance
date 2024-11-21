@@ -163,7 +163,7 @@
             <div class="chat-overlay-header-mobile">
                 <img class="close" src="./amelia-close.png" alt="toggle chat overlay" />
             </div>
-            <iframe id="receiver" src="https://adviacu.dev.amelia.com/Amelia/ui/advia_external/chat?domain=adviacu_customerfacing_dev"
+            <iframe id="receiver" src="https://us.demo.amelia.com/Amelia/ui/roadsideAssistance/chat?domain=roadsideassistance"
                 frameborder="0" width="100%" height="100%" allow="geolocation; microphone; camera" onload="sendConversationAttribute('test0', 'value0')">
                 <p>Your browser does not support iframes.</p>
             </iframe>
@@ -222,7 +222,7 @@
 
             var url = e.data.url;
             console.log("Event received: " + JSON.stringify(e.data));
-            if (e.origin !== 'https://adviacu.dev.amelia.com')
+            if (e.origin !== 'https://us.demo.amelia.com')
                 return;
 
             if (e.data.action === "checkout" && e.data.additionalData) {
@@ -239,7 +239,7 @@
 
             var receiverElem = document.getElementById('receiver').contentWindow;
             console.log("Send data: " + JSON.stringify(data));
-            receiverElem.postMessage(data, "https://adviacu.dev.amelia.com/Amelia/ui/advia_external/chat?domain=adviacu_customerfacing_dev");
+            receiverElem.postMessage(data, "https://us.demo.amelia.com/Amelia/ui/roadsideAssistance/chat?domain=roadsideassistance");
         }
         window.addEventListener('message', receiveMessage);
 
